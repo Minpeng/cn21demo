@@ -76,12 +76,14 @@ public class SynchronizedTest {
 	}
 
 	public static void main(String[] args) {
+
 		Object obj = new Object();
 		printNum pNum = new printNum(obj);
 		printLetter pLetter = new printLetter(obj);
 
 		Thread threadNum = new Thread(pNum);
 		Thread threadLetter = new Thread(pLetter);
+		/* 数字先打印 */
 		threadNum.start();
 		threadLetter.start();
 
